@@ -1,0 +1,20 @@
+{% extends "../base.html" %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Company</th>
+        </thead>
+        <tbody>
+        {% for customer in object_list %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.company.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
