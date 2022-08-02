@@ -7,6 +7,7 @@ from ..models import AccessPermission
 
 class AccessPermissionTest(TestCase):
     fixtures = ['fixtures/dump.json']
+
     def setUp(self) -> None:
         self.user_a = User.objects.get(username='userA')
         self.user_b = User.objects.get(username='userB')

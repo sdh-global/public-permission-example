@@ -182,6 +182,97 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2022-08-02T18:15:41.080Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Superviser",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2022-08-02T18:16:22.328Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Supervisor",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2022-08-02T18:17:08.622Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "AccessModule object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"access permission\", \"object\": \"Permission Create\", \"fields\": [\"Groups\"]}}, {\"changed\": {\"name\": \"access permission\", \"object\": \"Permission Update\", \"fields\": [\"Groups\"]}}, {\"changed\": {\"name\": \"access permission\", \"object\": \"Permission Read\", \"fields\": [\"Groups\"]}}, {\"changed\": {\"name\": \"access permission\", \"object\": \"Permission Delete\", \"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2022-08-02T18:18:08.044Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "supervisor_a",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2022-08-02T18:18:23.280Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "supervisor_b",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2022-08-02T18:18:35.916Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "AccessGroup object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2022-08-02T18:18:45.163Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "AccessGroup object (6)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -594,11 +685,19 @@
   }
 },
 {
+  "model": "auth.group",
+  "pk": 3,
+  "fields": {
+    "name": "Supervisor",
+    "permissions": []
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$iHbIe6XRRLeZYKoE96Y9Fy$ac7q545PfOW766CHzev535jrp8SxX8jTreJDiQxa/tU=",
-    "last_login": "2022-07-24T06:56:11.428Z",
+    "last_login": "2022-08-02T18:15:04.820Z",
     "is_superuser": true,
     "username": "superuser",
     "first_name": "",
@@ -643,6 +742,42 @@
     "is_staff": false,
     "is_active": true,
     "date_joined": "2022-07-30T10:02:17.760Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$alDnDlQI2JVR7aJ5Y7iP37$k0a/32qKaYNyg7ZjBh1n8/SUDZrmjG2tvQI4XVrKvuA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "supervisor_a",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-08-02T18:18:07.897Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$MWZcvEm0Z40nfO2nhZP0vy$D1MHSa1JmaciUNgr57nrv9DS+HOxlw11k9FUFC81Uhs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "supervisor_b",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-08-02T18:18:23.140Z",
     "groups": [],
     "user_permissions": []
   }
@@ -737,10 +872,10 @@
 },
 {
   "model": "sessions.session",
-  "pk": "eakh5px27flxbtb50nef1j39471l2jyo",
+  "pk": "umeg7yj9fg5vccf2bowgw5eudg0buxxe",
   "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hCKwKBL9z0DGYZBqgaS0q6Md7dNutDtf-_9twi4LiWsnecwJXEVWpx-t4j05LqD9MB6b5JaXeYpyl2RB-1ybIlft8P9OyjYy1Z7Yu9pYK0pOmVTdjRkG4kZFWgTFbCzDkzcuM9gCJizIYdnuDivrfh8AQTvOHM:1oHjgy:xXbLfXRosh6vcnkEi6uzSwFZVyKJzxbnVmVCBRk3dNc",
-    "expire_date": "2022-08-13T10:27:32.047Z"
+    "session_data": ".eJxVjDkOwjAUBe_iGlle4iWU9JzB8l-MAyiW4qRC3B0ipYD2zcx7iZS3taat85ImEmehxel3g4wPnndA9zzfmsQ2r8sEclfkQbu8NuLn5XD_Dmru9Vt7Z4aBox2ttpZQF-u1LwWIXSAgQEDnRjY6xOBw9FpFxRhBeWUQohXvD9iDN6U:1oIwQ4:CDEOKPzuqUE25S1FGs-lH9riZwbOvMxGnrWWa8OdkqE",
+    "expire_date": "2022-08-16T18:15:04.824Z"
   }
 },
 {
@@ -791,6 +926,24 @@
     "user": 3,
     "group": 2,
     "company": 1
+  }
+},
+{
+  "model": "Access.accessgroup",
+  "pk": 5,
+  "fields": {
+    "user": 4,
+    "group": 3,
+    "company": 1
+  }
+},
+{
+  "model": "Access.accessgroup",
+  "pk": 6,
+  "fields": {
+    "user": 5,
+    "group": 3,
+    "company": 2
   }
 },
 {
@@ -890,7 +1043,7 @@
     "name": "Create",
     "slug": "create",
     "groups": [
-      1
+      3
     ]
   }
 },
@@ -902,7 +1055,7 @@
     "name": "Update",
     "slug": "update",
     "groups": [
-      1
+      3
     ]
   }
 },
@@ -914,7 +1067,9 @@
     "name": "Read",
     "slug": "read",
     "groups": [
-      1
+      1,
+      2,
+      3
     ]
   }
 },
@@ -926,7 +1081,7 @@
     "name": "Delete",
     "slug": "delete",
     "groups": [
-      1
+      3
     ]
   }
 }

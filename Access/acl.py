@@ -1,3 +1,4 @@
+from typing import List
 from Company.models import Company
 
 from .models import AccessPermission
@@ -5,13 +6,15 @@ from .exceptions import AclDenied
 
 
 class Acl:
+    ATTR_PREFIX = 'has_'
+
     def __init__(self, user):
         self.user = user
 
     def __getattr__(self, key):
-        if key[0:3] == 'has_':
-            return self.check_acl(key[3:])
-        raise AttributeError
+        if key.startswith(self.ATTR_PREFIX):
+            return self.check_acl(key[len(self.ATTR_PREFIX):])
+        raise AttributeError(key)
 
     def __str__(self):
         return '<Acl id: %s>' % self.id
@@ -28,18 +31,15 @@ class Acl:
         permission = self.get_permission(module_slug, permission_slug)
         return permission.has_access(self.user, company)
 
-    def get_companies(self, module_slug, permission_slug):
+    def get_companies(self, module_slug, permission_slug) -> List[Company]:
         """
         Return allowed list of Companies for requested permission
         """
         if self.user.is_superuser:
-            rc = list(Company.objects.all())
-        else:
-            module = self.get_permission(module_slug, permission_slug)
-            rc = module.get_companies(self.user)
+            return list(Company.objects.all())
 
-        data = [item.id for item in rc]
-        return data
+        module = self.get_permission(module_slug, permission_slug)
+        return module.get_companies(self.user)
 
     def get_permission(self, module_slug, permission_slug) -> AccessPermission:
         try:
@@ -52,7 +52,7 @@ class Acl:
 
     def check_raise(self, module_slug, permission_slug, company=None):
         if not self.check(module_slug, permission_slug, company):
-            module = self.get_module(module_slug, permission_slug)
+            module = self.get_permission(module_slug, permission_slug)
             if not module.pk:
                 msg = f'permission ({module_slug}:{permission_slug}) was not properly defined'
             else:
