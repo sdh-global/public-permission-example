@@ -1,0 +1,28 @@
+{%  extends 'base.html' %}
+
+{% block title %}{{ block.super }} | Dashboard{% endblock %}
+
+
+{% block body %}
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="https://sdh.com.ua">
+            <img class="mb-4" src="https://sdhukraine.com/static/img/logo-patriotic.svg" alt="" height="60">
+      </a>
+  </header>
+ <main>
+    <h1>ACL example</h1>
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2>Current logged User</h2>
+        <p>{{ request.user.username }}</p>
+        <ul class="icon-list ps-0">
+          <li class="d-flex align-items-start mb-1"></li>
+          <li class="text-muted d-flex align-items-start mb-1">Bootstrap Parcel starter (coming soon!)</li>
+        </ul>
+      </div>
+    </div>
+ </main>
+</div>
+
+{% endblock %}
